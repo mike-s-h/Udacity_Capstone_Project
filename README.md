@@ -87,44 +87,73 @@ Build the data pipelines to create the data model.
 #### 4.3 Data dictionary
 
 ##### Fact Table
- I94_IMMIGRATION_DATA
+
+##### I94_IMMIGRATION_DATA
+ 
  |-- year_of_immig: integer (nullable = true) | year of immigration from Immigration Data table
+ 
  |-- month_of_immig: integer (nullable = true) | month of immigration from Immigration Data table
+ 
  |-- immig_from: string (nullable = true) | country of origin from Immigration Data table
+ 
  |-- immig_to_state: string (nullable = true) | US state Code of immigration from Immigration Data table
+ 
  |-- count_immigration: long (nullable = false) | Count of immigrations
+ 
  |-- state_code: string (nullable = true) | US state code of immigration from Immigration Data table
+ 
  |-- avg_median_age: double (nullable = true) | average of median age in US state from Demographic Data table
+ 
  |-- avg_female_pop: double (nullable = true) | average % of female population of US state  from Demographic Data table
+ 
  |-- avg_male_pop: double (nullable = true) | average % of male population of US state from Demographic Data table
+ 
  |-- avg_veterans: double (nullable = true) | average % of veterans of US state from Demographic Data table
+ 
  |-- avg_foreign_born: double (nullable = true) | average % of foreign born population of US state from Demographic Data table
+ 
  |-- avg_airport_elevation_ft: double (nullable = true) | average elevation in feet of airport location of US state from Aiport Data table
 
 ##### Dimension tables
 
-I94 Immigration Data table
+##### I94 Immigration Data table
+
  |-- cicid: double (nullable = true)
+ 
  |-- year: integer (nullable = true) | year of immigration
+ 
  |-- month: integer (nullable = true) | month of immigration
+ 
  |-- origin_country: string (nullable = true) | country of origin
+ 
  |-- state_code: string (nullable = true) | US state Code
+ 
  |-- i94port: string (nullable = true) | City Port Code of Immigration
+ 
  |-- city_dest_airport: string (nullable = true) | City of destination Airport
 
-U.S. City Demographic Data table
+##### U.S. City Demographic Data table
+
  |-- State: string (nullable = true) | US state Name
+ 
  |-- state_code: string (nullable = true) | US state Code
+ 
  |-- avg_median_age: double (nullable = true) | average of median age
+ 
  |-- avg_male_pop: double (nullable = true) | average % of male population
+ 
  |-- avg_female_pop: double (nullable = true) | average % of female population
+ 
  |-- avg_veterans: double (nullable = true) | average % of veterans
+ 
  |-- avg_foreign_born: double (nullable = true) | average % of foreign born
 
 
-Airport Code table
+##### Airport Code table
  |-- country: string (nullable = true) | Airports in the United States
+ 
  |-- state_code: string (nullable = true) | US state Code
+ 
  |-- avg_elevation_ft: double (nullable = true) average elevation in feet of airport location
 
 
